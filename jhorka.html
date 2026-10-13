@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JHORKA IT</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="jhorka.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav"><a class="logo" href="#index"><img class="logo-img"
+                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjU2M0VCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDZCNkQ0Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9InVybCgjZykiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5KPC90ZXh0Pjwvc3ZnPg=="
+                    alt="" width="34" height="34">JHORKA IT</a> <button class="nav-toggle" aria-label="Toggle menu"
+                aria-expanded="false">☰</button>
+            <nav class="nav-links" aria-label="Main">
+                <ul>
+                    <li><a href="#index" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li class="has-dd"><a href="#courses">Courses</a><button class="dd-btn"
+                            aria-label="Open Courses menu" aria-expanded="false" aria-controls="courses-menu">&#9662;</button>
+                        <ul class="dd" id="courses-menu">
+                            <li><a href="#courses">All Courses</a></li>
+                            <li><a href="#course-details">Course Details</a></li>
+                            <li><a href="#admission">Admission</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#it-training">IT Training</a></li>
+                    <li><a href="#consultancy">Consultancy</a></li>
+                    <li class="has-dd"><a href="#student-services">Student Services</a><button class="dd-btn"
+                            aria-label="Open Student Services menu" aria-expanded="false"
+                            aria-controls="student-services-menu">&#9662;</button>
+                        <ul class="dd" id="student-services-menu">
+                            <li><a href="#student-services">Overview</a></li>
+                            <li><a href="#team">Our Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul><a class="btn btn-accent" href="#admission">Apply Now</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="pg" id="pg-index" data-title="Home | JHORKA IT" hidden>
+            <section class="hero">
+                <div class="container hero-in">
+                    <div>
+                        <h1>Empowering Your Future Through IT Education</h1>
+                        <p>JHORKA IT is an education consultancy that helps students pick the right technology path,
+                            learn practical skills and prepare for careers.</p>
+                        <a class="btn btn-accent" href="#courses">Explore Courses</a> <a class="btn btn-ghost"
+                            href="#contact">Contact Us</a>
+                    </div> <img class="hero-img"
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgNDAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMyNTYzRUIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNkI2RDQiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPGNpcmNsZSBjeD0iMjcwIiBjeT0iMjAwIiByPSIxNzAiIGZpbGw9InVybCgjYikiIG9wYWNpdHk9Ii4yNSIvPjxjaXJjbGUgY3g9IjI3MCIgY3k9IjIwMCIgcj0iMTIwIiBmaWxsPSJ1cmwoI2IpIiBvcGFjaXR5PSIuMjUiLz4KPHJlY3QgeD0iMTIwIiB5PSI5MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxOTAiIHJ4PSIxNCIgZmlsbD0iIzBhMTczMCIgc3Ryb2tlPSIjMDZCNkQ0IiBzdHJva2Utd2lkdGg9IjMiLz4KPGNpcmNsZSBjeD0iMTQwIiBjeT0iMTA4IiByPSI1IiBmaWxsPSIjZjg3MTcxIi8+PGNpcmNsZSBjeD0iMTU2IiBjeT0iMTA4IiByPSI1IiBmaWxsPSIjZmJiZjI0Ii8+PGNpcmNsZSBjeD0iMTcyIiBjeT0iMTA4IiByPSI1IiBmaWxsPSIjMzRkMzk5Ii8+CjxnIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI3Ij48cGF0aCBkPSJNMTQ1IDE0MGg3MCIgc3Ryb2tlPSIjMDZCNkQ0Ii8+PHBhdGggZD0iTTE2NSAxNjBoMTEwIiBzdHJva2U9IiNmZmYiLz48cGF0aCBkPSJNMTY1IDE4MGg2MCIgc3Ryb2tlPSIjMjU2M0VCIi8+PHBhdGggZD0iTTE2NSAyMDBoOTAiIHN0cm9rZT0iI2ZmZiIvPjxwYXRoIGQ9Ik0xNDUgMjIwaDUwIiBzdHJva2U9IiMwNkI2RDQiLz48cGF0aCBkPSJNMTQ1IDI0MGgxMzAiIHN0cm9rZT0iIzI1NjNFQiIgb3BhY2l0eT0iLjciLz48L2c+CjxwYXRoIGQ9Ik05MCAyODBoMzYwbC0zMCAyNkgxMjB6IiBmaWxsPSIjZGJlN2ZmIi8+PHJlY3QgeD0iMjMwIiB5PSIyODYiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2IiByeD0iMyIgZmlsbD0iIzk0YTNiOCIvPgo8Zz48cmVjdCB4PSIzOTAiIHk9IjYwIiB3aWR0aD0iOTAiIGhlaWdodD0iNjAiIHJ4PSIxNCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik00MzUgNzVsMjIgOHYxNGMwIDEyLTEwIDIwLTIyIDI0LTEyLTQtMjItMTItMjItMjRWODN6IiBmaWxsPSIjMjU2M0VCIi8+PHBhdGggZD0iTTQyNiA5OGw3IDcgMTItMTQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI0IiBmaWxsPSJub25lIi8+PC9nPgo8Zz48cmVjdCB4PSI0MCIgeT0iMjE1IiB3aWR0aD0iODYiIGhlaWdodD0iNjQiIHJ4PSIxNCIgZmlsbD0iI2ZmZiIvPjxlbGxpcHNlIGN4PSI4MyIgY3k9IjIzNiIgcng9IjIwIiByeT0iNyIgZmlsbD0iIzA2QjZENCIvPjxwYXRoIGQ9Ik02MyAyMzZ2MjJjMCA0IDkgOCAyMCA4czIwLTQgMjAtOHYtMjIiIGZpbGw9IiMyNTYzRUIiLz48L2c+CjxnPjxyZWN0IHg9IjQwMCIgeT0iMjUwIiB3aWR0aD0iODAiIGhlaWdodD0iNjAiIHJ4PSIxNCIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHg9IjQ0MCIgeT0iMjg5IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMEIxRjNBIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4mbHQ7LyZndDs8L3RleHQ+PC9nPgo8Y2lyY2xlIGN4PSI2MCIgY3k9IjEyMCIgcj0iOCIgZmlsbD0iIzA2QjZENCIvPjxjaXJjbGUgY3g9IjQ3MCIgY3k9IjE5MCIgcj0iNiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=="
+                        alt="Illustration of a student learning to code on a laptop" width="520" height="400">
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>Featured courses</h2>
+                    <div class="grid g3" id="featured-courses"></div>
+                    <p class="center"><a class="btn btn-primary" href="#courses">View all courses</a></p>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Why choose JHORKA IT</h2>
+                    <div class="grid g3">
+                        <article class="card">
+                            <div class="ico">💻</div>
+                            <h3>Project-based learning</h3>
+                            <p>Build real projects in every course.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🎯</div>
+                            <h3>Career guidance</h3>
+                            <p>One-to-one counseling and learning roadmaps.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">👥</div>
+                            <h3>Small batches</h3>
+                            <p>More instructor attention for every student.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🏅</div>
+                            <h3>Certificates</h3>
+                            <p>Course completion certificates (details to be confirmed).</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="stats">
+                <div class="container grid g4">
+                    <div><b data-count="1200">0</b><span>Students guided*</span></div>
+                    <div><b data-count="25">0</b><span>Courses*</span></div>
+                    <div><b data-count="15">0</b><span>Instructors*</span></div>
+                    <div><b data-count="90">0</b><span>% satisfaction*</span></div>
+                </div>
+                <p class="center small">*Sample figures. Replace with real data.</p>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>What students say</h2>
+                    <div class="grid g3">
+                        <blockquote class="card">“The roadmap helped me choose web development with
+                            confidence.”<cite>Student A (sample)</cite></blockquote>
+                        <blockquote class="card">“Project work made the lessons stick.”<cite>Student B (sample)</cite>
+                        </blockquote>
+                        <blockquote class="card">“CV and interview sessions were very useful.”<cite>Student C
+                                (sample)</cite></blockquote>
+                    </div>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Latest news</h2>
+                    <div class="grid g3">
+                        <article class="card">
+                            <h3>New batch: Web Development</h3>
+                            <p class="small">Date: [placeholder]</p>
+                            <p>Admissions open for the next batch.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Free career counseling week</h3>
+                            <p class="small">Date: [placeholder]</p>
+                            <p>Book a free session with a consultant.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Python workshop</h3>
+                            <p class="small">Date: [placeholder]</p>
+                            <p>A beginner-friendly weekend workshop.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section home-team-preview">
+                <div class="container">
+                    <h2>Meet Our Team</h2>
+                    <p class="lead">The Team Behind JHORKA IT</p>
+                    <div class="grid g3">
+                        <article class="card team-card">
+                            <img class="team-photo" src="images/taisir.png"
+                                alt="Profile image placeholder for Member 1" loading="lazy">
+                            <h3>TAISIR KABIR</h3>
+                            <p class="team-role">Project Manager &amp; Lead Developer</p>
+                            <p>Coordinated project planning, development, teamwork, and final quality review.</p>
+                        </article>
+                        <article class="card team-card"> <img class="team-photo" src="images/jobayer.jpeg"
+                                alt="Profile image placeholder for Member 2" loading="lazy">
+                            <h3>JOBAYER</h3>
+                            <p class="team-role">UI/UX Designer &amp; Frontend Developer</p>
+                            <p>Designed the experience and built responsive, interactive website components.</p>
+                        </article>
+                        <article class="card team-card">
+                            <img class="team-photo" src="images/abid.jpeg"
+                                alt="Profile image placeholder for Member 3" loading="lazy">
+                            <h3>ABID NEWAZ</h3>
+                            <p class="team-role">Frontend Developer &amp; Website Tester</p>
+                            <p>Developed and tested pages, links, forms, and responsive layouts.</p>
+                        </article>
+                    </div>
+                    <p class="center"><a class="btn btn-primary" href="#team">View Full Team</a></p>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="container">
+                    <h2>Ready to start your IT journey?</h2>
+                    <p>Talk to a counselor or apply for the next batch.</p><a class="btn btn-accent"
+                        href="#admission">Apply Now</a> <a class="btn btn-ghost" href="#contact">Contact Us</a>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-about" data-title="About Us | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>About JHORKA IT</h1>
+                    <p>An IT education consultancy built around student success.</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>Who we are</h2>
+                    <div class="two">
+                        <div>
+                            <p>JHORKA IT began with a simple idea: students should get honest guidance and hands-on
+                                training before choosing a technology career. We combine consultancy with practical
+                                courses so that learners know what to study, why, and how to get there. <em>(Sample
+                                    background text; replace with your real story.)</em></p>
+                        </div><img class="about-img"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMzYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQjFGM0EiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyNTYzRUIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjM2MCIgcng9IjIwIiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3QgeD0iNTAiIHk9IjQwIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjE2MCIgcng9IjEyIiBmaWxsPSIjZmZmIi8+PGcgZmlsbD0iIzA2QjZENCI+PHJlY3QgeD0iODAiIHk9IjEzMCIgd2lkdGg9IjM0IiBoZWlnaHQ9IjUwIiByeD0iNSIvPjxyZWN0IHg9IjEzMCIgeT0iMTAwIiB3aWR0aD0iMzQiIGhlaWdodD0iODAiIHJ4PSI1Ii8+PHJlY3QgeD0iMTgwIiB5PSI3MCIgd2lkdGg9IjM0IiBoZWlnaHQ9IjExMCIgcng9IjUiLz48L2c+PHBhdGggZD0iTTI1MCA4MGgxNTBNMjUwIDEwNWgxMTBNMjUwIDEzMGgxMzAiIHN0cm9rZT0iI2NiZDVlMSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZyBmaWxsPSIjZmZmIj48Y2lyY2xlIGN4PSIxMjAiIGN5PSIyNjUiIHI9IjI4Ii8+PGNpcmNsZSBjeD0iMjQwIiBjeT0iMjY1IiByPSIyOCIvPjxjaXJjbGUgY3g9IjM2MCIgY3k9IjI2NSIgcj0iMjgiLz48cGF0aCBkPSJNNzAgMzQwYzAtNDAgMjItNTIgNTAtNTJzNTAgMTIgNTAgNTJ6TTE5MCAzNDBjMC00MCAyMi01MiA1MC01MnM1MCAxMiA1MCA1MnpNMzEwIDM0MGMwLTQwIDIyLTUyIDUwLTUyczUwIDEyIDUwIDUyeiIvPjwvZz48L3N2Zz4="
+                            alt="Students and a chart showing learning progress" loading="lazy">
+                    </div>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Mission and vision</h2>
+                    <div class="grid g2">
+                        <article class="card">
+                            <div class="ico">🎯</div>
+                            <h3>Mission</h3>
+                            <p>Provide accessible, practical IT education and clear career guidance.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">👁</div>
+                            <h3>Vision</h3>
+                            <p>Be a trusted name for IT learners and professionals.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>Our values</h2>
+                    <div class="grid g3">
+                        <article class="card">
+                            <div class="ico">🤝</div>
+                            <h3>Integrity</h3>
+                            <p>Honest advice, clear fees, no false promises.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">💡</div>
+                            <h3>Practicality</h3>
+                            <p>Learn by building.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">❤</div>
+                            <h3>Student first</h3>
+                            <p>Support that continues after class.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Leadership</h2>
+                    <div class="grid g3">
+                        <article class="card person"><img class="av"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlMGYyZmUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNiZmRiZmUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0zMCAyMDBjMC00NSAzMC02NSA3MC02NXM3MCAyMCA3MCA2NXoiIGZpbGw9IiMyNTYzRUIiLz48cmVjdCB4PSI4OCIgeT0iMTA1IiB3aWR0aD0iMjQiIGhlaWdodD0iMzIiIGZpbGw9IiNlOGI4OTQiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMzgiIGZpbGw9IiNlOGI4OTQiLz48cGF0aCBkPSJNNjIgNzhjMC0zMCAyMC00NCA0MC00NHMzOCAxNCAzNiA0NGMtOC0xNC0yMC0yMC0zOC0yMHMtMzAgNi0zOCAyMHoiIGZpbGw9IiMyYjFiMTIiLz48Y2lyY2xlIGN4PSI4NyIgY3k9Ijg0IiByPSI0IiBmaWxsPSIjMUUyOTNCIi8+PGNpcmNsZSBjeD0iMTEzIiBjeT0iODQiIHI9IjQiIGZpbGw9IiMxRTI5M0IiLz48cGF0aCBkPSJNODggMTAwcTEyIDkgMjQgMCIgc3Ryb2tlPSIjMUUyOTNCIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg=="
+                                alt="Portrait of team member (sample)" loading="lazy">
+                            <h3>Founder Name</h3>
+                            <p class="small">Founder & Director (placeholder)</p>
+                        </article>
+                        <article class="card person"><img class="av"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlMGYyZmUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNiZmRiZmUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0zMCAyMDBjMC00NSAzMC02NSA3MC02NXM3MCAyMCA3MCA2NXoiIGZpbGw9IiMwNkI2RDQiLz48cmVjdCB4PSI4OCIgeT0iMTA1IiB3aWR0aD0iMjQiIGhlaWdodD0iMzIiIGZpbGw9IiNjNjg2NDIiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMzgiIGZpbGw9IiNjNjg2NDIiLz48cGF0aCBkPSJNNjIgNzhjMC0zMCAyMC00NCA0MC00NHMzOCAxNCAzNiA0NGMtOC0xNC0yMC0yMC0zOC0yMHMtMzAgNi0zOCAyMHoiIGZpbGw9IiMxMTEiLz48Y2lyY2xlIGN4PSI4NyIgY3k9Ijg0IiByPSI0IiBmaWxsPSIjMUUyOTNCIi8+PGNpcmNsZSBjeD0iMTEzIiBjeT0iODQiIHI9IjQiIGZpbGw9IiMxRTI5M0IiLz48cGF0aCBkPSJNODggMTAwcTEyIDkgMjQgMCIgc3Ryb2tlPSIjMUUyOTNCIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg=="
+                                alt="Portrait of team member (sample)" loading="lazy">
+                            <h3>Lead Mentor</h3>
+                            <p class="small">Head of Training (placeholder)</p>
+                        </article>
+                        <article class="card person"><img class="av"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlMGYyZmUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNiZmRiZmUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0zMCAyMDBjMC00NSAzMC02NSA3MC02NXM3MCAyMCA3MCA2NXoiIGZpbGw9IiMwQjFGM0EiLz48cmVjdCB4PSI4OCIgeT0iMTA1IiB3aWR0aD0iMjQiIGhlaWdodD0iMzIiIGZpbGw9IiNmMWM5YTUiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMzgiIGZpbGw9IiNmMWM5YTUiLz48cGF0aCBkPSJNNjIgNzhjMC0zMCAyMC00NCA0MC00NHMzOCAxNCAzNiA0NGMtOC0xNC0yMC0yMC0zOC0yMHMtMzAgNi0zOCAyMHoiIGZpbGw9IiM2YjNmMWQiLz48Y2lyY2xlIGN4PSI4NyIgY3k9Ijg0IiByPSI0IiBmaWxsPSIjMUUyOTNCIi8+PGNpcmNsZSBjeD0iMTEzIiBjeT0iODQiIHI9IjQiIGZpbGw9IiMxRTI5M0IiLz48cGF0aCBkPSJNODggMTAwcTEyIDkgMjQgMCIgc3Ryb2tlPSIjMUUyOTNCIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg=="
+                                alt="Portrait of team member (sample)" loading="lazy">
+                            <h3>Chief Counselor</h3>
+                            <p class="small">Head of Consultancy (placeholder)</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>Why students choose us</h2>
+                    <ul class="ticks">
+                        <li>Practical, project-based courses</li>
+                        <li>Personal learning roadmaps</li>
+                        <li>Career, CV and interview support</li>
+                        <li>Online and offline options</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="container">
+                    <h2>Ready to start your IT journey?</h2>
+                    <p>Talk to a counselor or apply for the next batch.</p><a class="btn btn-accent"
+                        href="#admission">Apply Now</a> <a class="btn btn-ghost" href="#contact">Contact Us</a>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-courses" data-title="Courses | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Our Courses</h1>
+                    <p>Find the right course for your goals.</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="toolbar"><label for="search" class="sr">Search courses</label><input id="search"
+                            type="search" placeholder="Search courses...">
+                        <div class="filters" role="group" aria-label="Category filters"><button class="chip active"
+                                data-cat="All">All</button><button class="chip" data-cat="Web">Web</button><button
+                                class="chip" data-cat="Programming">Programming</button><button class="chip"
+                                data-cat="Security">Security</button><button class="chip"
+                                data-cat="Data">Data</button><button class="chip" data-cat="Career">Career</button>
+                        </div>
+                    </div>
+                    <div class="grid g3" id="course-grid"></div>
+                    <p id="no-results" class="center" hidden>No courses match your search.</p>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="container">
+                    <h2>Ready to start your IT journey?</h2>
+                    <p>Talk to a counselor or apply for the next batch.</p><a class="btn btn-accent"
+                        href="#admission">Apply Now</a> <a class="btn btn-ghost" href="#contact">Contact Us</a>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-course-details" data-title="Course Details | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1 id="cd-title">Course Details</h1>
+                    <p id="cd-sub"></p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container two">
+                    <div>
+                        <h2>Overview</h2>
+                        <p id="cd-overview"></p>
+                        <h2>What you will learn</h2>
+                        <ul class="ticks" id="cd-learn"></ul>
+                        <h2>Curriculum</h2>
+                        <div id="cd-modules" class="acc"></div>
+                        <h2>Career opportunities</h2>
+                        <ul class="ticks" id="cd-careers"></ul>
+                    </div>
+                    <aside class="card side"><img class="thumb" id="cd-thumb"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwQjFGM0EiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyNTYzRUIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNjQwIiBoZWlnaHQ9IjM2MCIgZmlsbD0idXJsKCNnKSIvPjxnIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii4xMiI+PGNpcmNsZSBjeD0iNzAiIGN5PSI3MCIgcj0iNjAiLz48Y2lyY2xlIGN4PSI1OTAiIGN5PSIzMTAiIHI9IjkwIi8+PC9nPjxyZWN0IHg9IjIzMCIgeT0iMTEwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEzMCIgcng9IjEyIiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTIzMCAxNDBoMTgwIiBzdHJva2U9IiMyNTYzRUIiIHN0cm9rZS13aWR0aD0iNCIvPjxjaXJjbGUgY3g9IjI0OCIgY3k9IjEyNSIgcj0iNCIgZmlsbD0iIzA2QjZENCIvPjxjaXJjbGUgY3g9IjI2MiIgY3k9IjEyNSIgcj0iNCIgZmlsbD0iIzA2QjZENCIvPjxyZWN0IHg9IjI0NiIgeT0iMTU2IiB3aWR0aD0iNzAiIGhlaWdodD0iNjQiIHJ4PSI2IiBmaWxsPSIjMDZCNkQ0Ii8+PHJlY3QgeD0iMzI2IiB5PSIxNTYiIHdpZHRoPSI2OCIgaGVpZ2h0PSIxNCIgcng9IjYiIGZpbGw9IiNjYmQ1ZTEiLz48cmVjdCB4PSIzMjYiIHk9IjE4MCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjE0IiByeD0iNiIgZmlsbD0iI2NiZDVlMSIvPjwvc3ZnPg=="
+                            alt="Course banner">
+                        <p><b>Duration:</b> <span id="cd-dur"></span></p>
+                        <p><b>Level:</b> <span id="cd-level"></span></p>
+                        <p><b>Fee:</b> <span id="cd-fee"></span></p>
+                        <p><b>Prerequisites:</b> <span id="cd-pre"></span></p> <a class="btn btn-primary"
+                            href="#admission">Enroll now</a>
+                        <p class="small">Fees and dates are placeholders.</p>
+                    </aside>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="container">
+                    <h2>Ready to start your IT journey?</h2>
+                    <p>Talk to a counselor or apply for the next batch.</p><a class="btn btn-accent"
+                        href="#admission">Apply Now</a> <a class="btn btn-ghost" href="#contact">Contact Us</a>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-it-training" data-title="IT Training | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>IT Training</h1>
+                    <p>Skills you can use from day one.</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>Training tracks</h2>
+                    <div class="grid g3">
+                        <article class="card">
+                            <div class="ico">🌐</div>
+                            <h3>Web development</h3>
+                            <p>HTML, CSS, JavaScript and responsive design.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">📚</div>
+                            <h3>Frontend & backend</h3>
+                            <p>Build interfaces, then the server logic behind them.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🗄</div>
+                            <h3>Database management</h3>
+                            <p>SQL, data modeling and queries.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">💻</div>
+                            <h3>Python programming</h3>
+                            <p>From basics to automation and small apps.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🔌</div>
+                            <h3>Networking fundamentals</h3>
+                            <p>IP, routing, switching and troubleshooting.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🛡</div>
+                            <h3>Cybersecurity basics</h3>
+                            <p>Threats, safe practice and system hardening.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Project-based learning</h2>
+                    <p>Every track ends with a portfolio project reviewed by an instructor, such as a business website,
+                        a student database app, or a home-network security checklist.</p>
+                    <p><a class="btn btn-primary" href="#courses">See matching courses</a></p>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="container">
+                    <h2>Ready to start your IT journey?</h2>
+                    <p>Talk to a counselor or apply for the next batch.</p><a class="btn btn-accent"
+                        href="#admission">Apply Now</a> <a class="btn btn-ghost" href="#contact">Contact Us</a>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-consultancy" data-title="Education Consultancy | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Education Consultancy</h1>
+                    <p>Clear direction before you invest time and money.</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>How we help</h2>
+                    <div class="grid g3">
+                        <article class="card">
+                            <div class="ico">🧭</div>
+                            <h3>IT education guidance</h3>
+                            <p>Understand fields, paths and entry requirements.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">💬</div>
+                            <h3>Career counseling</h3>
+                            <p>Match your strengths and goals to roles.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">✅</div>
+                            <h3>Course selection</h3>
+                            <p>Choose courses that fit your level and schedule.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🛣</div>
+                            <h3>Learning roadmaps</h3>
+                            <p>A step-by-step plan with milestones.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🎓</div>
+                            <h3>Academic guidance</h3>
+                            <p>Support for study choices and applications.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🌱</div>
+                            <h3>Professional growth</h3>
+                            <p>Plans for upskilling while you work.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Request a consultation</h2>
+                    <form class="form card" id="consult" data-validate novalidate>
+                        <div class="field"><label for="consult-name">Full name *</label><input id="consult-name"
+                                name="name" type="text" required><span class="err"></span></div>
+                        <div class="field"><label for="consult-email">Email *</label><input id="consult-email"
+                                name="email" type="email" required><span class="err"></span></div>
+                        <div class="field"><label for="consult-phone">Phone *</label><input id="consult-phone"
+                                name="phone" type="tel" required><span class="err"></span></div>
+                        <div class="field"><label for="consult-interest">Interest *</label><select id="consult-interest"
+                                name="interest" required>
+                                <option value="">Choose...</option>
+                                <option>Web Development</option>
+                                <option>Programming</option>
+                                <option>Cybersecurity</option>
+                                <option>Data</option>
+                                <option>Not sure</option>
+                            </select><span class="err"></span></div>
+                        <div class="field"><label for="consult-message">Message</label><textarea id="consult-message"
+                                name="message" rows="4"></textarea><span class="err"></span></div><button
+                            class="btn btn-primary" type="submit">Request consultation</button>
+                        <p class="msg" role="status"></p>
+                        <p class="note">Demo only: this form does not send or save data.</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-student-services" data-title="Student Services | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Student Services</h1>
+                    <p>Support that goes beyond the classroom.</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>What we offer</h2>
+                    <div class="grid g3">
+                        <article class="card">
+                            <div class="ico">🛟</div>
+                            <h3>Student support</h3>
+                            <p>Help with schedules, doubts and progress.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">📖</div>
+                            <h3>Learning resources</h3>
+                            <p>Notes, practice sets and recommended reading.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🗺</div>
+                            <h3>Career planning</h3>
+                            <p>Set goals and track them term by term.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">💼</div>
+                            <h3>Internship preparation</h3>
+                            <p>Find, apply and prepare for internships.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">📄</div>
+                            <h3>CV and portfolio</h3>
+                            <p>Reviews to make your work stand out.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🎤</div>
+                            <h3>Interview preparation</h3>
+                            <p>Mock interviews with feedback.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-team" data-title="Meet Our Team | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Meet Our Team</h1>
+                    <p>The Team Behind JHORKA IT</p>
+                </div>
+            </section>
+            <section class="section team-section">
+                <div class="container">
+                    <h2 class="sr">The three founding team members</h2>
+                    <div class="grid g3">
+                        <article class="card team-card"> <img class="team-photo" src="images/taisir.png"
+                                alt="Profile image placeholder for Member 1" loading="lazy">
+                            <h3>Taisir Kabir</h3>
+                            <p class="team-role">Project Manager &amp; Lead Developer</p>
+                            <p>Led the planning and coordination that brought the JHORKA IT website together.</p>
+                            <h4>Responsibilities</h4>
+                            <ul>
+                                <li>Project planning and management</li>
+                                <li>Website structure and development coordination</li>
+                                <li>Assigning tasks and managing teamwork</li>
+                                <li>Final project review and quality control</li>
+                            </ul>
+                        </article>
+                        <article class="card team-card"> <img class="team-photo" src="images/jobayer.jpeg"
+                                alt="Profile image placeholder for Member 2" loading="lazy">
+                            <h3>Jobayer</h3>
+                            <p class="team-role">UI/UX Designer &amp; Frontend Developer</p>
+                            <p>Shaped the website's visual experience and developed its responsive frontend.</p>
+                            <h4>Responsibilities</h4>
+                            <ul>
+                                <li>Website UI/UX design</li>
+                                <li>HTML, CSS, and JavaScript development</li>
+                                <li>Responsive layouts for desktop, tablet, and mobile</li>
+                                <li>Navigation, animations, and interactive components</li>
+                            </ul>
+                        </article>
+                        <article class="card team-card"> <img class="team-photo" src="images/abid.jpeg"
+                                alt="Profile image placeholder for Member 3" loading="lazy">
+                            <h3>S M Abid Newaz</h3>
+                            <p class="team-role">Frontend Developer &amp; Website Tester</p>
+                            <p>Built and checked frontend pages to help ensure the site works smoothly across devices.
+                            </p>
+                            <h4>Responsibilities</h4>
+                            <ul>
+                                <li>Developing website pages and components</li>
+                                <li>Testing links, buttons, and forms</li>
+                                <li>Finding and fixing frontend bugs</li>
+                                <li>Checking responsiveness and overall website quality</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-admission" data-title="Admission | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Admission & Enrollment</h1>
+                    <p>Start your application in a few minutes.</p>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Admission requirements</h2>
+                    <div class="grid g3">
+                        <article class="card">
+                            <div class="ico">🪪</div>
+                            <h3>Basic details</h3>
+                            <p>Name, contact information and education background.</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">🖥</div>
+                            <h3>Device access</h3>
+                            <p>A computer or laptop for practice (details to be confirmed).</p>
+                        </article>
+                        <article class="card">
+                            <div class="ico">⏱</div>
+                            <h3>Commitment</h3>
+                            <p>Attend classes and complete projects.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>Application process</h2>
+                    <ol class="steps">
+                        <li>Choose a course</li>
+                        <li>Submit the registration form</li>
+                        <li>Talk with an advisor</li>
+                        <li>Confirm your seat and pay the fee (placeholder)</li>
+                    </ol>
+                </div>
+            </section>
+            <section class="section alt">
+                <div class="container">
+                    <h2>Student registration</h2>
+                    <form class="form card" id="admit" data-validate novalidate>
+                        <div class="field"><label for="admit-name">Full name *</label><input id="admit-name" name="name"
+                                type="text" required><span class="err"></span></div>
+                        <div class="field"><label for="admit-email">Email *</label><input id="admit-email" name="email"
+                                type="email" required><span class="err"></span></div>
+                        <div class="field"><label for="admit-phone">Phone *</label><input id="admit-phone" name="phone"
+                                type="tel" required><span class="err"></span></div>
+                        <div class="field"><label for="admit-course">Course *</label><select id="admit-course"
+                                name="course" required>
+                                <option value="">Choose...</option>
+                                <option>Web Development</option>
+                                <option>Python Programming</option>
+                                <option>Cybersecurity Basics</option>
+                                <option>Data Analysis</option>
+                                <option>Database Management</option>
+                                <option>Networking Fundamentals</option>
+                                <option>Career Readiness</option>
+                            </select><span class="err"></span></div>
+                        <div class="field"><label for="admit-mode">Mode *</label><select id="admit-mode" name="mode"
+                                required>
+                                <option value="">Choose...</option>
+                                <option>Online</option>
+                                <option>Offline</option>
+                            </select><span class="err"></span></div>
+                        <div class="field"><label for="admit-message">Notes</label><textarea id="admit-message"
+                                name="message" rows="4"></textarea><span class="err"></span></div><button
+                            class="btn btn-primary" type="submit">Submit application</button>
+                        <p class="msg" role="status"></p>
+                        <p class="note">Demo only: this form does not send or save data.</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-faq" data-title="FAQ | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Frequently Asked Questions</h1>
+                    <p>Quick answers to common questions.</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2>Questions</h2>
+                    <div class="acc">
+                        <div class="acc-item"><button class="acc-btn" aria-expanded="false">What are the course
+                                fees?</button>
+                            <div class="acc-panel">
+                                <p>Fees are placeholders for now. Check each course page or contact us for current fees.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="acc-item"><button class="acc-btn" aria-expanded="false">How long are the
+                                courses?</button>
+                            <div class="acc-panel">
+                                <p>Most courses run from 6 to 16 weeks, depending on level.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item"><button class="acc-btn" aria-expanded="false">Do you offer online and
+                                offline classes?</button>
+                            <div class="acc-panel">
+                                <p>Both options can be offered. Confirm availability for your batch.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item"><button class="acc-btn" aria-expanded="false">How do I apply?</button>
+                            <div class="acc-panel">
+                                <p>Fill in the form on the Admission page and an advisor will contact you.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item"><button class="acc-btn" aria-expanded="false">Will I get a
+                                certificate?</button>
+                            <div class="acc-panel">
+                                <p>Students who complete a course can receive a certificate of completion.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item"><button class="acc-btn" aria-expanded="false">Do you give career
+                                guidance?</button>
+                            <div class="acc-panel">
+                                <p>Yes. See our Consultancy and Student Services pages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="container">
+                    <h2>Ready to start your IT journey?</h2>
+                    <p>Talk to a counselor or apply for the next batch.</p><a class="btn btn-accent"
+                        href="#admission">Apply Now</a> <a class="btn btn-ghost" href="#contact">Contact Us</a>
+                </div>
+            </section>
+        </div>
+        <div class="pg" id="pg-contact" data-title="Contact Us | JHORKA IT" hidden>
+            <section class="page-hero">
+                <div class="container">
+                    <h1>Contact Us</h1>
+                    <p>We usually reply within one working day (placeholder).</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container two">
+                    <div>
+                        <form class="form card" id="contact" data-validate novalidate>
+                            <div class="field"><label for="contact-name">Name *</label><input id="contact-name"
+                                    name="name" type="text" required><span class="err"></span></div>
+                            <div class="field"><label for="contact-email">Email *</label><input id="contact-email"
+                                    name="email" type="email" required><span class="err"></span></div>
+                            <div class="field"><label for="contact-phone">Phone</label><input id="contact-phone"
+                                    name="phone" type="tel"><span class="err"></span></div>
+                            <div class="field"><label for="contact-subject">Subject *</label><input id="contact-subject"
+                                    name="subject" type="text" required><span class="err"></span></div>
+                            <div class="field"><label for="contact-message">Message *</label><textarea
+                                    id="contact-message" name="message" rows="4" required></textarea><span
+                                    class="err"></span></div><button class="btn btn-primary" type="submit">Send
+                                message</button>
+                            <p class="msg" role="status"></p>
+                            <p class="note">Demo only: this form does not send or save data.</p>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="card">
+                            <h3>Reach us</h3>
+                            <p>Address: [Office address placeholder]</p>
+                            <p>Phone: [+000 0000 000000]</p>
+                            <p>Email: [info@example.com]</p>
+                            <div class="social dark"><a href="#" aria-label="Facebook">f</a><a href="#"
+                                    aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">▶</a></div>
+                        </div>
+                        <div class="map" role="img" aria-label="Map placeholder">Google Maps embed placeholder</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container fgrid">
+            <div><a class="logo light" href="#index"><img class="logo-img"
+                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMjU2M0VCIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDZCNkQ0Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9InVybCgjZykiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5KPC90ZXh0Pjwvc3ZnPg=="
+                        alt="" width="34" height="34">JHORKA IT</a>
+                <p>IT-based education consultancy offering training, career guidance and student support.</p>
+                <div class="social"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="LinkedIn">in</a><a
+                        href="#" aria-label="YouTube">▶</a><a href="#" aria-label="X">X</a></div>
+            </div>
+            <div>
+                <h3>Quick links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#consultancy">Consultancy</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Popular courses</h3>
+                <ul>
+                    <li><a href="#course-details?id=web">Web Development</a></li>
+                    <li><a href="#course-details?id=python">Python Programming</a></li>
+                    <li><a href="#course-details?id=cyber">Cybersecurity Basics</a></li>
+                    <li><a href="#course-details?id=data">Data Analysis</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <ul class="plain">
+                    <li>Address: [Office address placeholder]</li>
+                    <li>Phone: [+000 0000 000000]</li>
+                    <li>Email: [info@example.com]</li>
+                </ul>
+                <form class="newsletter" data-newsletter novalidate><label for="nl-email" class="sr">Email
+                        address</label><input id="nl-email" type="email" placeholder="Your email" required><button
+                        class="btn btn-accent" type="submit">Subscribe</button>
+                    <p class="msg" role="status"></p>
+                </form>
+            </div>
+        </div>
+        <div class="copy">&copy; 2026 JHORKA IT. All Rights Reserved.</div>
+    </footer><button id="toTop" aria-label="Back to top">&#8593;</button>
+    <script src="jhorka.js"></script>
+</body>
+
+</html>
