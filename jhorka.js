@@ -1,4 +1,4 @@
-const SUPABASE_URL = "https://xgtmvlmuyeswrcrxhcad.supabase.co/rest/v1/";
+const SUPABASE_URL = "https://xgtmvlmuyeswrcrxhcad.supabase.co";
 const SUPABASE_KEY = "sb_publishable_SRafhdzD54Ft_PpMtCCKJg_1cq27B_T";
 
 const supabaseClient = window.supabase.createClient(
@@ -29,6 +29,35 @@ const IMG = { "about": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy
             const o = b.parentElement.classList.toggle('open'); b.setAttribute('aria-expanded', o)
         });
         $$('.nav-links a').forEach(a => a.addEventListener('click', closeNav));
+        // theme toggle
+        const themeToggle = $('#theme-toggle');
+        const themeIcon = $('.theme-toggle-icon', themeToggle);
+        const themeLabel = $('.theme-toggle-label', themeToggle);
+        const setTheme = theme => {
+            const isDark = theme === 'dark';
+            document.documentElement.dataset.theme = theme;
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to day mode' : 'Switch to night mode');
+            themeIcon.textContent = isDark ? '☾' : '☀';
+            themeLabel.textContent = isDark ? 'Night mode' : 'Day mode';
+        };
+        let savedTheme = 'dark';
+        try {
+            const storedTheme = localStorage.getItem('jhorka-theme');
+            if (storedTheme === 'light' || storedTheme === 'dark') savedTheme = storedTheme;
+        } catch (error) {
+            console.error('Unable to read the saved theme preference.', error);
+        }
+        setTheme(savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            setTheme(theme);
+            try {
+                localStorage.setItem('jhorka-theme', theme);
+            } catch (error) {
+                console.error('Unable to save the theme preference.', error);
+            }
+        });
         // back to top
         const tt = $('#toTop'); addEventListener('scroll', () => tt.classList.toggle('show', scrollY > 400)); tt.onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
         // featured
@@ -62,13 +91,113 @@ const IMG = { "about": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy
             if (el.required && !v) m = 'This field is required.'; else if (v && el.type == 'email' && !emailOk(v)) m = 'Enter a valid email address.'; else if (v && el.type == 'tel' && !phoneOk(v)) m = 'Enter a valid phone number.';
             err.textContent = m; box.classList.toggle('bad', !!m); return !m
         }
-        document.querySelectorAll('form[data-validate]').forEach(f => {
-            f.querySelectorAll('input,select,textarea').forEach(el => el.addEventListener('blur', () => checkField(el)));
-            f.addEventListener('submit', e => {
-                e.preventDefault(); const ok = [...f.querySelectorAll('input,select,textarea')].map(checkField).every(Boolean), m = f.querySelector('.msg');
-                m.textContent = ok ? 'Thank you! Your form passed validation. (Demo: nothing was sent or saved.)' : ''; if (ok) f.reset()
-            })
-        });
+document.querySelectorAll('form[data-validate]').forEach(f => {
+
+    // Keep existing validation
+    f.querySelectorAll('input,select,textarea').forEach(el => {
+        el.addEventListener('blur', () => checkField(el));
+    });
+
+    f.addEventListener('submit', async e => {
+        e.preventDefault();
+
+        const ok = [...f.querySelectorAll('input,select,textarea')]
+            .map(checkField)
+            .every(Boolean);
+
+        const m = f.querySelector('.msg');
+
+        if (!ok) {
+            m.textContent = 'Please fill in the form correctly.';
+            return;
+        }
+
+        const button = f.querySelector('button[type="submit"]');
+
+        button.disabled = true;
+        m.textContent = 'Submitting...';
+
+        try {
+            const name = f.elements['name'].value.trim();
+            const email = f.elements['email'].value.trim();
+
+            // 1. ADMISSION FORM
+            if (f.id === 'admit') {
+
+                const courseName = f.elements['course'].value;
+
+                const { data: course, error: courseError } =
+                    await supabaseClient
+                        .from('courses')
+                        .select('id')
+                        .eq('title', courseName)
+                        .limit(1)
+                        .single();
+
+                if (courseError) throw courseError;
+
+                const { error } = await supabaseClient
+                    .from('admissions')
+                    .insert({
+                        student_name: name,
+                        email: email,
+                        phone: f.elements['phone'].value.trim(),
+                        course_id: course.id,
+                        mode: f.elements['mode'].value,
+                        notes: f.elements['message'].value.trim()
+                    });
+
+                if (error) throw error;
+            }
+
+            // 2. CONSULTANCY FORM
+            else if (f.id === 'consult') {
+
+                const { error } = await supabaseClient
+                    .from('consultations')
+                    .insert({
+                        name: name,
+                        email: email,
+                        phone: f.elements['phone'].value.trim(),
+                        interest: f.elements['interest'].value,
+                        message: f.elements['message'].value.trim()
+                    });
+
+                if (error) throw error;
+            }
+
+            // 3. CONTACT FORM
+            else if (f.id === 'contact') {
+
+                const { error } = await supabaseClient
+    .from('contacts')
+    .insert({
+        name: name,
+        email: email,
+        phone: f.elements['phone'].value.trim(),
+        subject: f.elements['subject'].value.trim(),
+        message: f.elements['message'].value.trim()
+    });
+
+                if (error) throw error;
+            }
+
+            else {
+                throw new Error('Unknown form');
+            }
+
+            m.textContent = 'Submitted successfully!';
+            f.reset();
+
+        } catch (error) {
+            console.error('Form submission error:', error);
+            m.textContent = 'Submission failed. Please try again.';
+
+        } finally {
+            button.disabled = false;
+        }
+    });
+});
         document.querySelectorAll('form[data-newsletter]').forEach(f => f.addEventListener('submit', e => {
             e.preventDefault(); const i = f.querySelector('input'), m = f.querySelector('.msg');
             m.textContent = emailOk(i.value.trim()) ? 'Subscribed (demo only, no email saved).' : 'Please enter a valid email.'; if (emailOk(i.value.trim())) f.reset()
