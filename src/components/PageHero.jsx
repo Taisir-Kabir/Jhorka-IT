@@ -1,0 +1,12 @@
+function PageHero({ title, children }) {
+  return (
+    <section className="page-hero">
+      <div className="container">
+        <h1>{title}</h1>
+        {children && <p>{children}</p>}
+      </div>
+    </section>
+  );
+}
+
+export default PageHero;
