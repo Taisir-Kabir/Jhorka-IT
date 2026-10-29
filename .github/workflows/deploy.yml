@@ -1,4 +1,4 @@
-name: Deploy React site to GitHub Pages
+name: Deploy static site to GitHub Pages
 
 on:
   push:
@@ -20,18 +20,11 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Build site
-        run: npm run build
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+      - name: Prepare static site
+        run: |
+          mkdir dist
+          cp index.html jhorka.css jhorka.js favicon.svg dist/
+          cp -R images dist/images
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
